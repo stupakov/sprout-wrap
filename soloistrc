@@ -6,7 +6,7 @@ recipes:
 - sprout-osx-base::homebrew
 
 # settings
-- pivotal_workstation::sshd_on
+#- pivotal_workstation::sshd_on
 - pivotal_workstation::inputrc
 - sprout-osx-settings::defaults_fast_key_repeat_rate
 - pivotal_workstation::locate_on
@@ -15,9 +15,10 @@ recipes:
 # development (general)
 - sprout-osx-base::workspace_directory
 - pivotal_workstation::unix_essentials
-- sprout-osx-git::git_projects
+#- sprout-osx-git::git_projects
 - pivotal_workstation::git_config_global_defaults
 - sprout-osx-git::git_scripts
+- sprout-osx-apps::tig
 
 # development (rails)
 #(not working in mavericks)- pivotal_workstation::rvm
@@ -38,37 +39,38 @@ recipes:
 - pivotal_workstation::mouse_locator
 - sprout-osx-apps::menumeters
 - pivotal_workstation::bettertouchtool
-- sprout-osx-apps::ccmenu
-- pivotal_workstation::github_for_mac
-- pivotal_workstation::gitx
+#- sprout-osx-apps::ccmenu
+#- pivotal_workstation::github_for_mac
+#(has wrong path for sprout-osx-base::user_owns_usr_local)- pivotal_workstation::gitx
 - sprout-osx-apps::iterm2
-- pivotal_workstation::keycastr
-- sprout-osx-apps::virtualbox
-- sprout-osx-apps::vagrant
+- sprout-osx-apps::keycastr
+#- sprout-osx-apps::virtualbox
+#- sprout-osx-apps::vagrant
+#(doesn't work yet in mavericks)- sprout-osx-apps::flux
+- sprout-osx-apps::freeruler
+#(doesn't work yet in mavericks)- sprout-osx-apps::google_voice_and_video
+- sprout-osx-apps::heroku_toolbelt
+- sprout-osx-apps::spotify
 
 # apps (editors)
-- pivotal_workstation::textmate
-- pivotal_workstation::textmate_bundles
-- pivotal_workstation::textmate_preferences
+#- pivotal_workstation::textmate
+#- pivotal_workstation::textmate_bundles
+#- pivotal_workstation::textmate_preferences
 
 - pivotal_workstation::vim
+#(not sure if this works in mavericks or is redundant with vim recipe)- sprout-osx-apps::macvim 
 #(not working in mavericks)- pivotal_workstation::vim_config
 - sprout-osx-apps::ctags_exuberant
 
-- pivotal_workstation::rubymine
-- pivotal_workstation::rubymine_preferences_pivotal
+#- pivotal_workstation::rubymine
+#- pivotal_workstation::rubymine_preferences_pivotal
 
 node_attributes:
   git_pairs_domain: pivotallabs.com
   git_pairs_authors:
-    - initials: ah
-      name: Abhijit Hiremagalur
-      shortname: abhi
-    - initials: bc
-      name: Brian Cunnie
-      shortname: cunnie
-    - initials: jrhb
-      name: Jonathan Barnes
+    - initials: as
+      name: Alex Stupakov
+      shortname: astupakov
   git_projects:
     -
       - sprout-wrap
